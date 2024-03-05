@@ -3,7 +3,16 @@ import React from 'react'
 const HeroHome = () => {
   return (
     <div className='h-[100vh] flex items-center justify-center'>
-      Hero Home
+      {/* Section content */}
+      <div>
+        
+      </div>
+      {/* section gambar */}
+      <div>
+        Apakah ini namanya cvinta
+
+        
+      </div>
     </div>
   )
 }

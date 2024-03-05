@@ -31,3 +31,41 @@ body {
     text-wrap: balance;
   }
 }
+
+
+/* styles/fonts.css */
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  font-weight: bold;
+  font-style: normal;
+  src: url("/fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  font-weight: 800;
+  font-style: normal;
+  src: url("/fonts/SpaceGrotesk-SemiBold.ttf") format("truetype");
+}
+
+* {
+  font-family: "SpaceGrotesk", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box !important;
+}
