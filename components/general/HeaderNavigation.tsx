@@ -29,16 +29,16 @@ const HeaderNavigations = () => {
   }, []);
 
   const logoSrc = isMobile
-    ? "/assets/general/Logo Article.svg"
-    : "/assets/general/Logo Header.svg";
+    ? "/general/logomain.svg"
+    : "/general/logomain.svg";
 
     const isActiveLink = (path:String) => {
       return router.pathname === path ? "active-link" : "";
     };
   return (
       <div>
-        <header className="header-comp lg:px-20 px-4 py-4 flex items-center justify-between w-full fixed top-0 gap-10 h-[72px] z-50 border-b lg:border-b-0 lg:border-primary shadow-sm lg:rounded-none rounded-md">
-          <div className="flex gap-6 items-center lg:border-b w-full h-[72px] border-primary">
+        <header className="header-comp lg:px-20 px-4 py-4 flex items-center justify-between w-full fixed top-0 gap-10 h-[72px] z-50   shadow-sm lg:rounded-none rounded-md">
+          <div className="flex gap-10 items-center justify-between w-full h-[72px] ">
               <Link
                 href="/"
                 className=" cursor-pointer"
@@ -53,67 +53,59 @@ const HeaderNavigations = () => {
               />
                   </Link>
 
-            <nav className="hidden lg:flex gap-4 text-gray-800">
+            <nav className="hidden lg:flex gap-10 text-gray-800">
                 <Link
                   href="/"
-                  className={`hover:text-gray-300 rounded-lg px-4 py-2  ${
-                    isActiveLink("/") ? "font-bold bg-white shadow-sm" : ""
+                  className={`hover:text-gray-300  py-2  ${
+                    isActiveLink("/") ? "font-bold text-white border-b border-pink-600 shadow-sm" : " text-zinc-500"
                   }`}>
                   Home
                 </Link>
                 <Link
-                  href="/product"
-                  className={`hover:text-gray-300 rounded-lg px-4 py-2  ${
-                    isActiveLink("/product")
-                      ? "font-bold bg-white shadow-sm"
-                      : ""
+                  href="/digitalads"
+                  className={`hover:text-gray-300   py-2  ${
+                    isActiveLink("/digitalads")
+                      ? "font-bold text-white border-b border-pink-600 shadow-sm"
+                      : "text-zinc-500"
                   }`}>
-                  Product
+                  Digital Ads
                 </Link>
                 <Link
                   href="/contact"
-                  className={`hover:text-gray-300 rounded-lg px-4 py-2  ${
+                  className={`hover:text-gray-300   py-2  ${
                     isActiveLink("/contact")
-                      ? "font-bold bg-white shadow-sm"
-                      : ""
+                      ? "font-bold text-white border-b border-pink-600 shadow-sm"
+                      : "text-zinc-500"
                   }`}>
-                  Contact Us
+                  Design Work
                 </Link>
                 <Link
                   href="/about"
-                  className={`hover:text-gray-300 rounded-lg px-4 py-2  ${
-                    isActiveLink("/about") ? "font-bold bg-white shadow-sm" : ""
+                  className={`hover:text-gray-300   py-2  ${
+                    isActiveLink("/about") ? "font-bold text-white border-b border-pink-600 shadow-sm" : "text-zinc-500"
                   }`}>
                   About Us
                 </Link>
-                <Link
-                  href="/article"
-                  className={`hover:text-gray-300 rounded-lg px-4 py-2  ${
-                    isActiveLink("/article")
-                      ? "font-bold bg-white shadow-sm"
-                      : ""
-                  }`}>
-                  Article & News
-                </Link>
             </nav>
-          </div>
-
-            <div className="hidden lg:flex w-[300px] items-center justify-center lg:border-b h-[72px] border-primary">
+            <div className="hidden lg:flex  items-center justify-center  h-[72px] ">
               <button
-                className="bg-primary text-white hover:bg-navy-700 py-2 px-8 font-regular rounded flex items-center justify-center gap-2 "
+                className="bg-primary text-white hover:bg-navy-700  font-regular  items-center justify-center gap-2 px-[18px] py-2.5 rounded-lg shadow border border-neutral-50 j inline-flex"
                 onClick={() => {
                   window.open("https://wa.me/+6282280002797", "_blank");
                 }}>
-                Let`s Talk{" "}
+                Let`s Connect{" "}
                 <Image
-                  src={"/assets/general/whatsapp.svg"}
+                  src={"/general/whatsapp.svg"}
                   alt={""}
                   width={16}
                   height={16}
                 />
               </button>
             </div>
-          <div className="lg:hidden flex items-center w-fit h-[72px] border-primary  ">
+          </div>
+
+            
+          <div className="lg:hidden flex items-center w-fit h-[72px]   ">
           </div>
         </header>
       </div>

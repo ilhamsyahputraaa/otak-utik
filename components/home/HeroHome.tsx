@@ -15,7 +15,7 @@ const HeroHome = () => {
       </div>
       {/* section gambar */}
       <div className='lg:w-1/2 lg:order-last order-first'>
-        <Image src={'/home/otak.png'} alt={'OtakUtik'} width={1000} height={1000} className='w-full'/>
+        <Image src={'/home/ilustration/OTAK.svg'} alt={'OtakUtik'} width={1000} height={1000} className='w-full'/>
       </div>
     </div>
   )
