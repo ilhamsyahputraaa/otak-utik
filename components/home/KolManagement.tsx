@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import Image from "next/image";
 import { FadeIn, FadeInRight, FadeInUp } from "../animations/AnimationsTemplate";
 import { MotionDiv } from "../animations/MotionDiv";
+import { ServiceProps } from "@/services/type";
+import { Services } from "@/services/LocalData";
 
 
 export default function ShowCaseProduct() {
@@ -16,14 +18,13 @@ export default function ShowCaseProduct() {
 
   const sliderRef = useRef<Slider>(null);
 
-  const [data, setData] = useState<ProductProps[]>([]);
+  const [data, setData] = useState<ServiceProps[]>([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getProductHome();
-        setData(res);
+        setData(Services);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -53,8 +54,8 @@ export default function ShowCaseProduct() {
                 >
                   <FadeInRight>
                     <Image
-                      src={`${item?.featured_image}`}
-                      alt={item?.name}
+                      src={`${item?.imagePath}`}
+                      alt={item?.title}
                       width={500}
                       height={500}
                       className="object-cover w-full lg:rounded-ss-xl lg:h-[800px] h-[228px]"
@@ -84,12 +85,12 @@ export default function ShowCaseProduct() {
                         />
 
                         <h3 className="text-slate-100 text-2xl lg:text-3xl font-extrabold lg:leading-[38px] h-fit">
-                          {data[currentSlide]?.name}
+                          {data[currentSlide]?.title}
                         </h3>
                       </div>
 
                       <span className="text-slate-300 lg:text-lg font-normal lg:w-[560px]  text-base font-['Sen'] leading-normal h-fit">
-                        {data[currentSlide]?.short_description}
+                        {data[currentSlide]?.descriptions}
                       </span>
                       <button
                         className="text-teal-400 text-sm font-normal leading-tight flex gap-2 items-center  hover:bg-teal-400/10 rounded-lg w-fit mt-3  h-fit "
@@ -111,36 +112,6 @@ export default function ShowCaseProduct() {
                   </FadeInUp>
                 </div>
 
-                <div className="flex items-center justify-start gap-5 lg:px-4 h-fit">
-                  <div className="flex gap-4 lg:gap-5 items-start h-fit">
-                    {data[currentSlide]?.sub_products
-                      .slice(0, 3)
-                      .map((subItem, subIndex) => (
-                        <FadeIn key={subIndex}>
-                          <div className="grid gap-3">
-                            <Image
-                              src={`${subItem.image_url}`}
-                              alt={"icon"}
-                              width={100}
-                              height={100}
-                              className="rounded-full lg:w-[100px] w-[64px] aspect-square object-cover"
-                            />
-                            <span className="text-center w-[64px] lg:w-[100px] text-slate-300 lg:text-lg text-sm lg:font-normal   font-normal font-['Sen'] lg:leading-7  leading-tight">
-                              {subItem.name}
-                            </span>
-                          </div>
-                        </FadeIn>
-                      ))}
-                  </div>
-                  {data[currentSlide]?.images_url.length > 3 && (
-                    <FadeIn>
-                      <div className=" items-start justify-center flex flex-col text-start text-slate-400 lg:text-lg font-normal lg:leading-7   text-sm font-['Sen'] leading-tight h-fit">
-                        <div>and</div>
-                        <div>more ...</div>
-                      </div>
-                    </FadeIn>
-                  )}
-                </div>
               </div>
 
               <div className="z-20">
